@@ -5,19 +5,30 @@ import 'package:personal_website/Styles/TextStyles.dart';
 class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var margin = MediaQuery.of(context).size.width - 1762.14 + 352 + 60 + 100;
+    if(margin < 0){
+      margin = 12;
+    }
     return Container(
+      margin: EdgeInsets.fromLTRB(margin/2, 0, margin/2, 0),
       child: Column(
         children: [
+          SizedBox(
+            height: 35,
+          ),
           Row(
             children: [
               IconButton(
-                icon: Icon(Icons.menu),
+                icon: Icon(Icons.menu, color: Colors.white,),
               ),
               Text(
-                "Calmday",
+                "CALMDAY",
                 style: TextStyles.titleTextStyle,
               )
             ],
+          ),
+          SizedBox(
+            height: 25,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -29,7 +40,9 @@ class Header extends StatelessWidget {
                       "Work",
                       style: TextStyles.footerBodyText2,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("/");
+                    },
                   ),
                   SizedBox(
                     width: 25.0,
@@ -39,7 +52,9 @@ class Header extends StatelessWidget {
                       "Blog",
                       style: TextStyles.footerBodyText2,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("/blog");
+                    },
                   ),
                   SizedBox(
                     width: 25.0,
@@ -78,6 +93,9 @@ class Header extends StatelessWidget {
                 ],
               ),
             ],
+          ),
+          SizedBox(
+            height: 35,
           )
         ],
       ),
