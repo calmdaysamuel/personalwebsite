@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:personal_website/Styles/TextStyles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Header extends StatelessWidget {
+  final bool darktheme;
+
+  Header({this.darktheme = true});
+
   @override
   Widget build(BuildContext context) {
-    var margin = MediaQuery.of(context).size.width - 1762.14 + 352 + 60 + 100;
-    if(margin < 0){
-      margin = 12;
-    }
     return Container(
-      margin: EdgeInsets.fromLTRB(margin/2, 0, margin/2, 0),
       child: Column(
         children: [
           SizedBox(
@@ -18,22 +19,25 @@ class Header extends StatelessWidget {
           ),
           Row(
             children: [
-              IconButton(
-                icon: Icon(Icons.menu, color: Colors.white,),
-              ),
-              Text(
-                "CALMDAY",
-                style: TextStyles.titleTextStyle,
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pushNamed("/");
+                },
+                child: Text(
+                  "S. CALMDAY",
+                  style: TextStyles.titleTextStyle,
+                ),
               )
             ],
           ),
           SizedBox(
-            height: 25,
+            height: 15,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   TextButton(
                     child: Text(
@@ -41,11 +45,11 @@ class Header extends StatelessWidget {
                       style: TextStyles.footerBodyText2,
                     ),
                     onPressed: () {
-                      Navigator.of(context).pushNamed("/");
+                      Navigator.of(context).pushNamed("/work");
                     },
                   ),
                   SizedBox(
-                    width: 25.0,
+                    width: 10.0,
                   ),
                   TextButton(
                     child: Text(
@@ -57,14 +61,16 @@ class Header extends StatelessWidget {
                     },
                   ),
                   SizedBox(
-                    width: 25.0,
+                    width: 10.0,
                   ),
                   TextButton(
                     child: Text(
                       "Hire Me",
                       style: TextStyles.footerBodyText2,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("/hire-me");
+                    },
                   ),
                 ],
               ),
@@ -72,22 +78,39 @@ class Header extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   IconButton(
+                    onPressed: () {
+                      launch("https://twitter.com");
+                    },
                     icon: Icon(
-                      LineIcons.twitter,
-                      color: Color(0xff656d78),
-                    ),
-                    hoverColor: Color(0xff1da1f2),
-                  ),
-                  IconButton(
-                    icon: Icon(
-                      LineIcons.github,
-                      color: Color(0xff656d78),
+                      Ionicons.logo_twitter,
+                      color: Color(0xff1da1f2),
                     ),
                   ),
                   IconButton(
+                    onPressed: () {
+                      launch("https://github.com/calmdaysamuel");
+                    },
                     icon: Icon(
-                      LineIcons.instagram,
-                      color: Color(0xff656d78),
+                      Ionicons.logo_github,
+                      color: Color(0xfff1f8ff),
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      launch("https://www.instagram.com/haveyoufoundsam/");
+                    },
+                    icon: Icon(
+                      Ionicons.logo_instagram,
+                      color: Color(0xffc13584),
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      launch("https://www.linkedin.com/in/samcalmday/");
+                    },
+                    icon: Icon(
+                      Ionicons.logo_linkedin,
+                      color: Color(0xff006192),
                     ),
                   ),
                 ],

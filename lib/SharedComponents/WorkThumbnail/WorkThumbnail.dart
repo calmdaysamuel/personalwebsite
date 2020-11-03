@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:personal_website/Styles/TextStyles.dart';
 
 class WorkThumbnail extends StatelessWidget {
+  final String title;
+  final String description;
+  final String goTo;
+
+  WorkThumbnail({this.title = "a", this.description = "a", this.goTo = ""});
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 400,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -13,18 +19,17 @@ class WorkThumbnail extends StatelessWidget {
           ),
           TextButton(
             child: Text(
-              "3D Icons ->",
+              this.title + " ->",
               style: TextStyles.workThumbnailTitle,
             ),
-            onPressed: (){},
+            onPressed: () {},
           ),
           SizedBox(
             height: 5,
           ),
           Container(
-            width: 432,
             child: Text(
-              "Carefully crafted 3D icons designed from scratch that look like they’re popping off your screen. Over 200 icons covering the…",
+              this.description,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: TextStyles.footerBodyText2,

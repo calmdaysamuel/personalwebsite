@@ -5,15 +5,9 @@ import 'package:personal_website/Styles/TextStyles.dart';
 class BlogSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var margin = MediaQuery.of(context).size.width - 1762.14 + 352 + 60 + 100;
-    if(margin < 0){
-      margin = 12;
-    }
     return Container(
-      margin: EdgeInsets.fromLTRB(margin/2, 0, margin/2, 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-
         children: [
           Text(
             "BLOG",
@@ -24,17 +18,83 @@ class BlogSection extends StatelessWidget {
           ),
           Row(
             children: [
-              BlogThumbnail(),
+              BlogThumbnail(
+                imageUrl:
+                    "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+              ),
               SizedBox(
                 width: 50,
               ),
-              BlogThumbnail()
+              BlogThumbnail(
+                imageUrl:
+                    "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+              )
+            ],
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          Row(
+            children: [
+              BlogThumbnail(
+                imageUrl:
+                    "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+              ),
+              SizedBox(
+                width: 50,
+              ),
+              BlogThumbnail(
+                imageUrl:
+                    "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+              )
+            ],
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          Row(
+            children: [
+              BlogThumbnail(
+                imageUrl:
+                    "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+              ),
+              SizedBox(
+                width: 50,
+              ),
+              BlogThumbnail(
+                imageUrl:
+                    "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+              )
+            ],
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          Row(
+            children: [
+              BlogThumbnail(
+                imageUrl:
+                    "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+              ),
+              SizedBox(
+                width: 50,
+              ),
+              BlogThumbnail(
+                imageUrl:
+                    "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+              )
             ],
           ),
           SizedBox(
             height: 35,
           ),
-          TextButton(child: Text("Sell all blog posts ->",style: TextStyles.ssText,),  onPressed: () {  },)
+          TextButton(
+            child: Text(
+              "See all blog posts ->",
+              style: TextStyles.ssText,
+            ),
+            onPressed: () {},
+          )
         ],
       ),
     );

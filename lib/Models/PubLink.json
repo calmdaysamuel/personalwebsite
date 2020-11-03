@@ -1,0 +1,23 @@
+{
+  "title": "",
+  "category": "",
+  "content": [
+    {
+      "isPubImage": true,
+      "isPubLink": true,
+      "isPubContent": true,
+      "contentHeader": "",
+      "paragraphs": [""],
+      "imageSubtitle": "",
+      "imageUrl": "",
+      "link": "",
+      "phrase":"",
+      "targetPhrase": ""
+    }
+  ],
+  "date": "",
+  "description": "",
+  "isPublication": true,
+  "pubImageUrl": "",
+  "tags": [""]
+}
