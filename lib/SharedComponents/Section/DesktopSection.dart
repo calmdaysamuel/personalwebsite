@@ -5,14 +5,15 @@ import 'package:personal_website/SharedComponents/BlogThumbnail/BlogThumbnail.da
 class DesktopSection extends StatelessWidget {
   List<Publication> content;
   bool supportPagination;
-  bool showImages;
+  bool enableImage;
   bool enableTags;
   String sectionHeader;
   List<Widget> sectionContent;
+
   DesktopSection({
     this.content = const [],
     this.supportPagination = false,
-    this.showImages = true,
+    this.enableImage = false,
     this.enableTags = true,
     this.sectionHeader = "",
   }) {
@@ -27,7 +28,7 @@ class DesktopSection extends StatelessWidget {
           title: item.title,
           description: item.description,
           imageUrl: item.pubImageUrl,
-          enableImage: this.showImages,
+          enableImage: this.enableImage,
           enableTag: this.enableTags));
       if (temp.length == 2) {
         temp.insert(
@@ -46,6 +47,7 @@ class DesktopSection extends StatelessWidget {
         temp = [];
       }
     }
+    content.addAll(temp);
     this.sectionContent = content;
   }
 
@@ -53,6 +55,7 @@ class DesktopSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(this.sectionHeader),
           ...this.sectionContent,

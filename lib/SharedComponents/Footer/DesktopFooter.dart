@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class DesktopFooter extends StatelessWidget {
   DesktopFooter();
+
   @override
   Widget build(BuildContext context) {
     return Container(

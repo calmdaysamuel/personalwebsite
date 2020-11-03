@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_website/SharedComponents/Tag/Tag.dart';
 import 'package:personal_website/SharedComponents/WorkThumbnail/WorkThumbnail.dart';
-import 'package:personal_website/Styles/TextStyles.dart';
 
 class BlogThumbnail extends StatelessWidget {
   final String title;
@@ -18,14 +16,18 @@ class BlogThumbnail extends StatelessWidget {
       this.tags = const [],
       this.enableImage = false,
       this.enableTag = false});
+
   @override
   Widget build(BuildContext context) {
+    print(
+        this.enableImage
+    );
     return Container(
       width: 400,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          this.enableImage == false
+          this.enableImage == true && this.imageUrl != ""
               ? InkWell(
                   onTap: () {},
                   child: Container(

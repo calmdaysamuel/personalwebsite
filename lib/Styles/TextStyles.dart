@@ -42,4 +42,18 @@ class TextStyles {
   static final blogText = GoogleFonts.inter(
       textStyle:
           TextStyle(fontSize: 18.0, height: 2.0, color: Color(0xffffffff)));
+
+  static final blogHeader = GoogleFonts.inter(
+      textStyle: TextStyle(
+          fontSize: 28.0,
+          height: 1.6,
+          color: Color(0xffffffff),
+          fontWeight: FontWeight.bold));
+
+  static final blogDate = GoogleFonts.inter(
+      textStyle: TextStyle(
+    fontSize: 11.0,
+    height: 1.0,
+    color: Color(0xff656d78),
+  ));
 }

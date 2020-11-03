@@ -7,6 +7,7 @@ class WorkThumbnail extends StatelessWidget {
   final String goTo;
 
   WorkThumbnail({this.title = "a", this.description = "a", this.goTo = ""});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,7 +23,9 @@ class WorkThumbnail extends StatelessWidget {
               this.title + " ->",
               style: TextStyles.workThumbnailTitle,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed("/article/${this.title}");
+            },
           ),
           SizedBox(
             height: 5,

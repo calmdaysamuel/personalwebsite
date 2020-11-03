@@ -41,10 +41,10 @@ class MyWebsite extends StatelessWidget {
   }
 
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
-    print(settings.name);
+
     if (hasBegin(settings.name, "/article/")) {
       var temp = settings.name.split("/").last.replaceAll("%20", " ");
-      print(temp);
+
       return MaterialPageRoute<void>(
         builder: (context) => Article(
           page: temp,
@@ -85,9 +85,7 @@ class MyWebsite extends StatelessWidget {
         WorkPage.route: (context) => WorkPage()
       },
       debugShowCheckedModeBanner: false,
-      home: Article(
-        page: "Thecalmday.com",
-      ),
+      home: HomePage(),
     );
   }
 }
@@ -95,5 +93,6 @@ class MyWebsite extends StatelessWidget {
 class Path {
   final String pattern;
   final Widget Function(BuildContext, String) builder;
+
   Path({this.pattern, this.builder});
 }

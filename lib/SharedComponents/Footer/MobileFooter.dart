@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class MobileFooter extends StatelessWidget {
   MobileFooter();
+
   @override
   Widget build(BuildContext context) {
     return Container(

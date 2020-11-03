@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:line_icons/line_icons.dart';
 import 'package:personal_website/Styles/TextStyles.dart';
 import 'package:url_launcher/url_launcher.dart';
 

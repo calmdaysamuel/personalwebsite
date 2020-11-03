@@ -1,24 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:personal_website/Models/Publication.dart';
-import 'package:personal_website/Services/API.dart';
 import 'package:personal_website/SharedComponents/Section/Section.dart';
-import 'package:personal_website/Styles/TextStyles.dart';
-import 'package:async/async.dart';
 
-class WorkSection extends StatefulWidget {
+class ContentSection extends StatefulWidget {
+  final Future<List<Publication>> Function(List<dynamic>) myFuture;
+  final List<dynamic> parameters;
+
+  final enableImages;
+
+  ContentSection({this.myFuture, this.parameters = const [], this.enableImages = false});
+
   @override
-  _WorkSectionState createState() => _WorkSectionState();
+  _ContentSectionState createState() => _ContentSectionState(
+      myFuture: this.myFuture, parameters: this.parameters, enableImage: this.enableImages);
 }
 
-class _WorkSectionState extends State<WorkSection> {
+class _ContentSectionState extends State<ContentSection> {
   Future<List<Publication>> contentdata;
+  final Future<List<Publication>> Function(List<dynamic>) myFuture;
+  List<dynamic> parameters;
+  final enableImage;
+
+  _ContentSectionState({this.myFuture, this.parameters, this.enableImage});
 
   @override
   void initState() {
     super.initState();
-    print("here");
-    this.contentdata = API.getPublicationRecommendation();
-    print("hello");
+    this.contentdata = this.myFuture(this.parameters);
   }
 
   @override
@@ -39,6 +47,7 @@ class _WorkSectionState extends State<WorkSection> {
                 ),
                 Section(
                   content: snapshot.data,
+                  enableImage: this.enableImage,
                 )
               ],
             ),

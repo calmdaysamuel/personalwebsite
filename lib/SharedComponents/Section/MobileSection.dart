@@ -5,15 +5,16 @@ import 'package:personal_website/SharedComponents/BlogThumbnail/BlogThumbnail.da
 class MobileSection extends StatelessWidget {
   List<Publication> content;
   bool supportPagination;
-  bool showImages;
+  bool enableImage;
   bool enableTags;
   String sectionHeader;
   List<Widget> sectionContent;
+
   MobileSection({
     this.content = const [],
     this.supportPagination = false,
-    this.showImages = true,
-    this.enableTags = true,
+    this.enableImage = false,
+    this.enableTags = false,
     this.sectionHeader = "",
   }) {
     renderContentMobile();
@@ -28,7 +29,7 @@ class MobileSection extends StatelessWidget {
           title: item.title,
           description: item.description,
           imageUrl: item.pubImageUrl,
-          enableImage: this.showImages,
+          enableImage: this.enableImage,
           enableTag: this.enableTags,
         ),
         SizedBox(

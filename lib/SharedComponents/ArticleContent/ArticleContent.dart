@@ -6,6 +6,7 @@ import 'package:personal_website/Styles/TextStyles.dart';
 class ArticleContent extends StatelessWidget {
   final Publication publication;
   List<Widget> articleContent = [];
+
   ArticleContent({this.publication}) {
     processPublication(this.publication);
   }
@@ -18,23 +19,14 @@ class ArticleContent extends StatelessWidget {
           ));
     }
 
-    // this.pageContent.addAll([
-    //   Text(
-    //     "pData.title",
-    //     style: TextStyles.workThumbnailTitle,
-    //   ),
-    //   Text("pData.date"),
-    // ]);
-
     return this.articleContent;
   }
 
   Widget process(PubContent item) {
-    print(item);
+
     if (item.pubLink) {
       return Container();
     } else if (item.pubContent) {
-      print("dsafsddscolumnu");
       return Container(
         child: Column(
           children: item.paragraphs.map((e) {
@@ -47,8 +39,11 @@ class ArticleContent extends StatelessWidget {
       );
     } else {
       return Container(
-        width: 400,
-        child: Image.network(item.imageUrl),
+        width: double.infinity,
+        child: Image.network(
+          item.imageUrl,
+          fit: BoxFit.cover,
+        ),
       );
     }
   }
@@ -56,12 +51,61 @@ class ArticleContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          this.publication.title,
-          style: TextStyles.footerHeaderText,
+        Text(this.publication.title, style: TextStyles.blogHeader),
+        SizedBox(
+          height: 15,
         ),
-        ...articleContent
+        Text(
+          this.publication.date,
+          style: TextStyles.blogDate,
+        ),
+        SizedBox(
+          height: 30,
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              child: Column(
+                children: this.articleContent,
+              ),
+            ),
+            Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 400,
+                    height: 400,
+                    color: Colors.green,
+                    child: Text("An ad"),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    width: 400,
+                    height: 400,
+                    color: Colors.green,
+                    child: Text("An ad"),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    width: 400,
+                    height: 400,
+                    color: Colors.green,
+                    child: Text("An ad"),
+                  )
+                ],
+              ),
+            )
+          ],
+        )
       ],
     );
   }
