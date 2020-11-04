@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loading_indicator/loading_indicator.dart';
 import 'package:personal_website/Models/Publication.dart';
 import 'package:personal_website/SharedComponents/Section/Section.dart';
 
@@ -8,11 +9,14 @@ class ContentSection extends StatefulWidget {
 
   final enableImages;
 
-  ContentSection({this.myFuture, this.parameters = const [], this.enableImages = false});
+  ContentSection(
+      {this.myFuture, this.parameters = const [], this.enableImages = false});
 
   @override
   _ContentSectionState createState() => _ContentSectionState(
-      myFuture: this.myFuture, parameters: this.parameters, enableImage: this.enableImages);
+      myFuture: this.myFuture,
+      parameters: this.parameters,
+      enableImage: this.enableImages);
 }
 
 class _ContentSectionState extends State<ContentSection> {
@@ -35,7 +39,21 @@ class _ContentSectionState extends State<ContentSection> {
       future: this.contentdata,
       builder: (context, snapshot) {
         if (snapshot.hasData == false) {
-          return Text("afsghjkgj", style: TextStyle(color: Colors.blue));
+          return Center(
+              child: Container(
+                width: 150,
+
+                  child: Column(
+                    children: [
+                      LoadingIndicator(
+                          indicatorType: Indicator.ballScaleRippleMultiple,
+                        color: Colors.green,
+                      ),
+                      SizedBox(height: 60,)
+                    ],
+                  )
+              )
+          );
         } else {
           return Container(
             child: Column(

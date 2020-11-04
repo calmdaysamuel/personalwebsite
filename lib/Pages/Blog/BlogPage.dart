@@ -14,7 +14,11 @@ class BlogPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageTemplate(
       children: [
-        ContentSection(myFuture: API.getPublicationRecommendation, parameters: [1], enableImages: true,),
+        ContentSection(
+          myFuture: API.getPublicationRecommendation,
+          parameters: [1],
+          enableImages: true,
+        ),
       ],
     );
   }

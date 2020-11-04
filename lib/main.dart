@@ -41,7 +41,6 @@ class MyWebsite extends StatelessWidget {
   }
 
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
-
     if (hasBegin(settings.name, "/article/")) {
       var temp = settings.name.split("/").last.replaceAll("%20", " ");
 

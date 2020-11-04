@@ -32,9 +32,7 @@ class _ArticleState extends State<Article> {
   }
 
   List<Widget> processPublication(Publication pData) {
-
     for (var item in pData.content) {
-
       this.pageContent.add(process(item));
     }
 
@@ -46,7 +44,6 @@ class _ArticleState extends State<Article> {
     if (item.pubLink != null) {
       return Container();
     } else if (item.pubContent != null) {
-
       return Container(
         child: Column(
           children: item.paragraphs.map((e) {

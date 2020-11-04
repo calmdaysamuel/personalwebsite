@@ -19,9 +19,7 @@ class BlogThumbnail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(
-        this.enableImage
-    );
+    print(this.enableImage);
     return Container(
       width: 400,
       child: Column(

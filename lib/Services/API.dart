@@ -18,7 +18,7 @@ class API {
   }
 
   static Future<Publication> getPublication(String publicationTitle) async {
-    final response = await http.get(HOST + "article/"+ publicationTitle);
+    final response = await http.get(HOST + "article/" + publicationTitle);
     if (response.statusCode == 200) {
       return Publication.fromJson(jsonDecode(response.body));
     }
@@ -38,7 +38,6 @@ class API {
 
   static Future<List<Publication>> getPublicationRecommendation(
       List<dynamic> params) async {
-
     final response = await http.get(HOST + "recommendation");
     return processResponse(response);
   }
@@ -50,8 +49,7 @@ class API {
       Iterable publications = json.decode(response.body);
 
       List<Publication> rest = List<Publication>.from(
-          publications.map((e) => Publication.fromJson(e))
-      );
+          publications.map((e) => Publication.fromJson(e)));
 
       return rest;
     }
