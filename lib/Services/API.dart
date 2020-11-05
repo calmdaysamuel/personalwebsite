@@ -38,7 +38,7 @@ class API {
 
   static Future<List<Publication>> getPublicationRecommendation(
       List<dynamic> params) async {
-    final response = await http.get(HOST + "recommendation");
+    final response = await http.get(HOST + "recommendation/" + params[0].toString());
     return processResponse(response);
   }
 

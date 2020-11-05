@@ -12,22 +12,6 @@ void main() {
 }
 
 class MyWebsite extends StatelessWidget {
-  List<Path> paths = [
-    Path(
-        pattern: r'^(\/article\/).+',
-        builder: (context, match) => Article(page: match)),
-    Path(
-        pattern: r'^(\/blog){1}(\/category\/){1}.+',
-        builder: (context, match) => BlogPage(
-              category: match,
-            )),
-    Path(
-        pattern: r'^(\/blog){1}(\/tag\/){1}.+',
-        builder: (context, match) => BlogPage(
-              tag: match,
-            )),
-  ];
-
   bool hasBegin(String str1, String str2) {
     int pointer = 0;
     while (str1.length > pointer && str2.length > pointer) {
@@ -43,7 +27,12 @@ class MyWebsite extends StatelessWidget {
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
     if (hasBegin(settings.name, "/article/")) {
       var temp = settings.name.split("/").last.replaceAll("%20", " ");
-
+      if(temp == ""){
+        return MaterialPageRoute<void>(
+          builder: (context) => BlogPage(),
+            settings: settings
+        );
+      }
       return MaterialPageRoute<void>(
         builder: (context) => Article(
           page: temp,
@@ -79,6 +68,7 @@ class MyWebsite extends StatelessWidget {
       onUnknownRoute: (settings) => MaterialPageRoute<void>(
           builder: (context) => Error404(), settings: settings),
       routes: {
+        "/article": (context) => BlogPage(),
         HireMe.route: (context) => HireMe(),
         BlogPage.route: (context) => BlogPage(),
         WorkPage.route: (context) => WorkPage()
@@ -87,11 +77,4 @@ class MyWebsite extends StatelessWidget {
       home: HomePage(),
     );
   }
-}
-
-class Path {
-  final String pattern;
-  final Widget Function(BuildContext, String) builder;
-
-  Path({this.pattern, this.builder});
 }

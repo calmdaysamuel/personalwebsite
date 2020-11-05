@@ -14,10 +14,11 @@ class PageTemplate extends StatelessWidget {
       margin = 60;
     }
     return Scaffold(
-      backgroundColor: Color(0xff0b0c0d),
+      backgroundColor: Color(0xff0b0b0d),
       body: Container(
         margin: EdgeInsets.fromLTRB(margin / 2, 0, margin / 2, 0),
         child: ListView(
+          addAutomaticKeepAlives: true,
           children: [
             Header(),
             ...children,

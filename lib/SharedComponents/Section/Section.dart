@@ -13,12 +13,14 @@ class Section extends StatelessWidget {
   String sectionHeader;
   List<Widget> sectionContent;
 
+  String goTo;
+
   Section({
     this.content = const [],
     this.supportPagination = false,
     this.enableImage = true,
     this.enableTags = true,
-    this.sectionHeader = "",
+    this.sectionHeader = "",  this.goTo,
   });
 
   @override
@@ -29,11 +31,13 @@ class Section extends StatelessWidget {
           return MobileSection(
             content: content,
             enableImage: this.enableImage,
+              goTo: this.goTo
           );
         }
         return DesktopSection(
           content: content,
           enableImage: this.enableImage,
+            goTo: this.goTo
         );
       },
     );

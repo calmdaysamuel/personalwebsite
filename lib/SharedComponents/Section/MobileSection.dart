@@ -10,12 +10,14 @@ class MobileSection extends StatelessWidget {
   String sectionHeader;
   List<Widget> sectionContent;
 
+  String goTo;
+
   MobileSection({
     this.content = const [],
     this.supportPagination = false,
     this.enableImage = false,
     this.enableTags = false,
-    this.sectionHeader = "",
+    this.sectionHeader = "",  this.goTo,
   }) {
     renderContentMobile();
   }
@@ -26,6 +28,7 @@ class MobileSection extends StatelessWidget {
     for (var item in this.content) {
       content.addAll([
         BlogThumbnail(
+          goTo: this.goTo,
           title: item.title,
           description: item.description,
           imageUrl: item.pubImageUrl,

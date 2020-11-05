@@ -10,12 +10,14 @@ class DesktopSection extends StatelessWidget {
   String sectionHeader;
   List<Widget> sectionContent;
 
+  String goTo;
+
   DesktopSection({
     this.content = const [],
     this.supportPagination = false,
     this.enableImage = false,
     this.enableTags = true,
-    this.sectionHeader = "",
+    this.sectionHeader = "",  this.goTo,
   }) {
     renderContentDesktop();
   }
@@ -25,6 +27,7 @@ class DesktopSection extends StatelessWidget {
     List<Widget> temp = [];
     for (var item in this.content) {
       temp.add(BlogThumbnail(
+          goTo: this.goTo,
           title: item.title,
           description: item.description,
           imageUrl: item.pubImageUrl,

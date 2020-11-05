@@ -9,13 +9,15 @@ class BlogThumbnail extends StatelessWidget {
   final enableImage;
   final enableTag;
 
+  String goTo;
+
   BlogThumbnail(
       {this.title = "",
       this.description = "",
       this.imageUrl = "",
       this.tags = const [],
       this.enableImage = false,
-      this.enableTag = false});
+      this.enableTag = false, this.goTo});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,9 @@ class BlogThumbnail extends StatelessWidget {
         children: [
           this.enableImage == true && this.imageUrl != ""
               ? InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).pushNamed("/article/${this.title}");
+                  },
                   child: Container(
                     child: Image.network(this.imageUrl),
                   ))
@@ -35,6 +39,7 @@ class BlogThumbnail extends StatelessWidget {
           WorkThumbnail(
             title: this.title,
             description: this.description,
+            goTo: this.goTo,
           ),
         ],
       ),

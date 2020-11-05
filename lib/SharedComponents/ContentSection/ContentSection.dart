@@ -9,23 +9,29 @@ class ContentSection extends StatefulWidget {
 
   final enableImages;
 
+  final String goTo;
+
   ContentSection(
-      {this.myFuture, this.parameters = const [], this.enableImages = false});
+      {this.myFuture, this.parameters = const [], this.enableImages = false, this.goTo = "article"});
 
   @override
   _ContentSectionState createState() => _ContentSectionState(
       myFuture: this.myFuture,
       parameters: this.parameters,
-      enableImage: this.enableImages);
+      enableImage: this.enableImages,
+      goTo: this.goTo
+  );
 }
 
-class _ContentSectionState extends State<ContentSection> {
+class _ContentSectionState extends State<ContentSection> with AutomaticKeepAliveClientMixin{
   Future<List<Publication>> contentdata;
   final Future<List<Publication>> Function(List<dynamic>) myFuture;
   List<dynamic> parameters;
   final enableImage;
 
-  _ContentSectionState({this.myFuture, this.parameters, this.enableImage});
+  String goTo;
+
+  _ContentSectionState({this.myFuture, this.parameters, this.enableImage, this.goTo});
 
   @override
   void initState() {
@@ -41,19 +47,18 @@ class _ContentSectionState extends State<ContentSection> {
         if (snapshot.hasData == false) {
           return Center(
               child: Container(
-                width: 150,
-
+                  width: 150,
                   child: Column(
                     children: [
                       LoadingIndicator(
-                          indicatorType: Indicator.ballScaleRippleMultiple,
+                        indicatorType: Indicator.ballScaleRippleMultiple,
                         color: Colors.green,
                       ),
-                      SizedBox(height: 60,)
+                      SizedBox(
+                        height: 60,
+                      )
                     ],
-                  )
-              )
-          );
+                  )));
         } else {
           return Container(
             child: Column(
@@ -66,6 +71,7 @@ class _ContentSectionState extends State<ContentSection> {
                 Section(
                   content: snapshot.data,
                   enableImage: this.enableImage,
+                  goTo: this.goTo
                 )
               ],
             ),
@@ -74,4 +80,7 @@ class _ContentSectionState extends State<ContentSection> {
       },
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

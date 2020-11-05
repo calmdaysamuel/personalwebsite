@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  material_floating_search_bar: ^0.2.3
   loading_indicator: ^1.2.0
   firebase_admob: ^0.10.1
   flutter_markdown: ^0.5.0

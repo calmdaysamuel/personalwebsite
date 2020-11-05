@@ -16,7 +16,7 @@ class BlogPage extends StatelessWidget {
       children: [
         ContentSection(
           myFuture: API.getPublicationRecommendation,
-          parameters: [1],
+          parameters: [7],
           enableImages: true,
         ),
       ],

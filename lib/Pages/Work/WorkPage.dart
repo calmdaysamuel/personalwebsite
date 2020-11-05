@@ -13,6 +13,7 @@ class WorkPage extends StatelessWidget {
         ContentSection(
           myFuture: API.getPublicationRecommendation,
           parameters: [1],
+          enableImages: true,
         )
       ],
     );

@@ -10,10 +10,10 @@ class HomePage extends StatelessWidget {
     return PageTemplate(
       children: [
         Bio(),
-        ContentSection(myFuture: API.getWorkPublication),
+        ContentSection(myFuture: API.getWorkPublication, goTo: "blog/category",),
         ContentSection(
           myFuture: API.getPublicationRecommendation,
-          parameters: [1],
+          parameters: [2],
           enableImages: true,
         ),
       ],
