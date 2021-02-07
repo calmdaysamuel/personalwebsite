@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:personal_website/DataModels/CardModel.dart';
+import 'package:personal_website/Widgets/Card/CardSquare.dart';
 
 class DesktopSection extends StatelessWidget {
-  final List<Widget> cards;
+  final List<CardModel> cards;
   List<Widget> section = [];
   final int maxSize;
 
@@ -17,7 +19,7 @@ class DesktopSection extends StatelessWidget {
         : MainAxisAlignment.spaceBetween;
     for (var item in this.cards) {
       //print(section);
-      tempList.add(item);
+      tempList.add(Container(width: 400, child: CardSquare.cardBody(card: item,)));
 
       count += 1;
 
