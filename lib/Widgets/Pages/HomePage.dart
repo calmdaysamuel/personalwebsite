@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_website/DataModels/CardModel.dart';
 import 'package:personal_website/DataSet.dart';
 import 'package:personal_website/Styles/Colors.dart';
 import 'package:personal_website/Styles/TextStyles.dart';
@@ -33,26 +34,13 @@ class HomePage extends StatelessWidget {
               ),
               Section(
                 cards: [
-                  Container(
-                    width: 400,
-                    child: CardSquare.cardBody(
-                      card: DataSet.projectData["intuit"].cardModel,
-                    ),
-                  ),
-                  Container(
-                    width: 400,
-                    child: CardSquare.cardBody(
-                      card: DataSet.projectData["autodesk"].cardModel,
-                    ),
-                  ),
-                  Container(
-                    width: 400,
-                    child: CardSquare(
-                      title: "My Work Experience",
-                      body:
-                          "This is a collection of my of all my work experience including past projects, education, awards and internships.",
-                      goTo: "experience-gallery",
-                    ),
+                  DataSet.projectData["intuit"].cardModel,
+                  DataSet.projectData["autodesk"].cardModel,
+                  CardModel(
+                    title: "My Work Experience",
+                    body:
+                        "This is a collection of my of all my work experience including past projects, education, awards and internships.",
+                    goTo: "experience-gallery",
                   ),
                 ],
               )
@@ -88,27 +76,14 @@ class HomePage extends StatelessWidget {
               ),
               Section(
                 cards: [
-                  Container(
-                    width: 400,
-                    child: CardSquare.cardBody(
-                      card: DataSet.projectData["chernobyl++"].cardModel,
-                    ),
-                  ),
-                  Container(
-                    width: 400,
-                    child: CardSquare.cardBody(
-                      card: DataSet.projectData["chernobyl++"].cardModel,
-                    ),
-                  ),
-                  Container(
-                    width: 400,
-                    child: CardSquare(
-                      title: "All Projects",
-                      body:
-                          "A collections of projects I've worked on where I was the primary developer.",
-                      goTo: "project-gallery",
-                    ),
-                  ),
+                  DataSet.projectData["chernobyl++"].cardModel,
+                  DataSet.projectData["chernobyl++"].cardModel,
+                  CardModel(
+                    title: "All Projects",
+                    body: "A collections of projects I've worked on where I was the primary developer.",
+                    goTo: "project-gallery",
+                  )
+
                 ],
               )
             ],
