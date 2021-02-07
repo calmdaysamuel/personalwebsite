@@ -1,4 +1,4 @@
-# Miscellaneous
+  # Miscellaneous
 *.class
 *.log
 *.pyc
@@ -29,7 +29,7 @@
 .packages
 .pub-cache/
 .pub/
-/build
+/build/
 
 # Web related
 lib/generated_plugin_registrant.dart

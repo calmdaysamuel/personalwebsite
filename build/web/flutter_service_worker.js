@@ -3,24 +3,20 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/NOTICES": "b10f3cda533ed90e151653ecf7a10d66",
-"assets/assets/images/Tulsa-Headshot-Photographer_9639a.jpg": "a0850008ec7abfea79711453028db093",
-"assets/assets/images/1567147079-440035-headshot-2jpg.jpeg": "f5cbf4ce2a778bb5b892a7e40255cb2a",
-"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "b14fcf3ee94e3ace300b192e9e7c8c5d",
-"assets/packages/line_icons/lib/assets/fonts/LineIcons.ttf": "8d0d74fa070d25f1d57e29df18800b8a",
-"assets/packages/flutter_markdown/assets/logo.png": "67642a0b80f3d50277c44cde8f450e50",
-"assets/packages/ionicons/fonts/Ionicons.ttf": "b3263095df30cb7db78c613e73f9499a",
-"assets/AssetManifest.json": "1ee2c58844b3cdd158da32f2e536726b",
-"assets/FontManifest.json": "c613afa2c2c3badd9f57804162a73626",
+  "assets/AssetManifest.json": "b5e2ca8d35d142349f8e65bae055b036",
+"assets/FontManifest.json": "3ca64090b9da4a7c0a3988ea3cda93fc",
 "assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
-"index.html": "6f555dcd98a10e4a70754220c06be266",
-"/": "6f555dcd98a10e4a70754220c06be266",
-"version.json": "26135e4be13343012ada35bf6692fcf3",
-"main.dart.js": "46111ef3b8df389009d3fe624c8d56a5",
+"assets/NOTICES": "b2e09a9fd875de841ff9b598bc5a0b85",
+"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
+"assets/packages/ionicons/fonts/Ionicons.ttf": "0cdf2a324d5c21f08c7f446476aa2ee3",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"manifest.json": "ca028b8a2a748e8a1f05c1bd2dcf5454"
+"index.html": "dbb45672ab89fe8ec61e509b67f9bc59",
+"/": "dbb45672ab89fe8ec61e509b67f9bc59",
+"main.dart.js": "ba6024506601ec4e7991749007425c8d",
+"manifest.json": "033380ea3d7eea2c440bbc82c92db6fb",
+"version.json": "26135e4be13343012ada35bf6692fcf3"
 };
 
 // The application shell files that are downloaded before a service worker can
@@ -164,7 +160,7 @@ async function downloadOffline() {
     }
     currentContent[key] = true;
   }
-  for (var resourceKey in Object.keys(RESOURCES)) {
+  for (var resourceKey of Object.keys(RESOURCES)) {
     if (!currentContent[resourceKey]) {
       resources.push(resourceKey);
     }

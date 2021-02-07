@@ -1,59 +1,79 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'Colors.dart';
+
 class TextStyles {
-  static final workThumbnailTitle = GoogleFonts.inter(
-      textStyle:
-          TextStyle(fontSize: 20.0, color: Color(0xffffffff), height: 1.6));
-  static final titleTextStyle = GoogleFonts.adventPro(
-      textStyle: TextStyle(
-          fontSize: 32.0,
-          color: Color(0xfff5f7fa),
-          height: 1.6,
-          letterSpacing: 2.0));
+  static TextStyle buttonText = GoogleFonts.montserrat(
+    color: ColorStyle.primaryWhite,
+    fontSize: 13,
+    fontWeight: FontWeight.w600,
+    wordSpacing: 1.4,
+  );
 
-  static final footerBodyText = GoogleFonts.inter(
-      textStyle:
-          TextStyle(fontSize: 18.0, color: Color(0xff656d78), height: 1.6));
-  static final footerBodyText2 = GoogleFonts.inter(
-      textStyle:
-          TextStyle(fontSize: 14.0, color: Color(0xff656d78), height: 1.6));
-  static final footerHeaderText = GoogleFonts.inter(
-      textStyle: TextStyle(
-          fontSize: 11.0,
-          color: Color(0xffaab2bd),
-          height: 1.0,
-          letterSpacing: 2.0));
+  static TextStyle buttonTextHover = GoogleFonts.montserrat(
+      color: ColorStyle.primaryWhite,
+      fontSize: 13,
+      fontWeight: FontWeight.w600,
+      wordSpacing: 1.4,
+      decoration: TextDecoration.underline);
 
-  static final footerReservedText = GoogleFonts.inter(
-      textStyle: TextStyle(
-    fontSize: 14.0,
-    color: Color(0xff656d78),
-  ));
+  static TextStyle cardHeading = GoogleFonts.montserrat(
+      color: ColorStyle.primaryBlack,
+      fontSize: 18.72,
+      fontWeight: FontWeight.w600);
 
-  static final bioTextStyles = GoogleFonts.inter(
-      textStyle:
-          TextStyle(fontSize: 22.0, height: 1.6, color: Color(0xfff5f7fa)));
+  static TextStyle cardHeading2 = GoogleFonts.montserrat(
+      color: ColorStyle.primaryBlack,
+      fontSize: 40,
+      fontWeight: FontWeight.w600,
+      letterSpacing: 2);
 
-  static final ssText = GoogleFonts.inter(
-      textStyle:
-          TextStyle(fontSize: 14.0, height: 1.0, color: Color(0xffffffff)));
+  static TextStyle cardBody = GoogleFonts.montserrat(
+    color: ColorStyle.primaryBlack,
+    fontSize: 16,
+  );
 
-  static final blogText = GoogleFonts.inter(
-      textStyle:
-          TextStyle(fontSize: 18.0, height: 2.0, color: Color(0xffffffff)));
+  static TextStyle footerTitle = GoogleFonts.montserrat(
+    color: ColorStyle.primaryWhite,
+    fontSize: 50,
+  );
 
-  static final blogHeader = GoogleFonts.inter(
-      textStyle: TextStyle(
-          fontSize: 28.0,
-          height: 1.6,
-          color: Color(0xffffffff),
-          fontWeight: FontWeight.bold));
+  static TextStyle headerTitle = GoogleFonts.manrope(
+      color: ColorStyle.primaryWhite,
+      fontSize: 24,
+      fontWeight: FontWeight.w600);
 
-  static final blogDate = GoogleFonts.inter(
-      textStyle: TextStyle(
-    fontSize: 11.0,
-    height: 1.0,
-    color: Color(0xff656d78),
-  ));
+  static TextStyle previousButtonText = GoogleFonts.montserrat(
+    color: ColorStyle.primaryBlack,
+    fontSize: 14,
+  );
+
+  //Project
+  static TextStyle projectHeading = GoogleFonts.libreBarcode39ExtendedText(
+      color: ColorStyle.primaryWhite,
+      fontSize: 24,
+      fontWeight: FontWeight.w600);
+
+  static TextStyle projectSubHeading = GoogleFonts.montserrat(
+      color: ColorStyle.primaryBlack,
+      fontSize: 24,
+      fontWeight: FontWeight.bold);
+
+  static TextStyle projectBodyText = GoogleFonts.montserrat(
+    color: ColorStyle.primaryBlack,
+    fontSize: 16,
+  );
+
+  static TextStyle categoryHeadingText = GoogleFonts.montserrat(
+      color: ColorStyle.primaryBlack,
+      fontSize: 32,
+      fontWeight: FontWeight.w700,
+      letterSpacing: 2);
+
+  static TextStyle bannerBodyText = GoogleFonts.montserrat(
+      color: ColorStyle.primaryWhite,
+      fontSize: 18,
+      fontWeight: FontWeight.w700,
+      letterSpacing: 2);
 }
