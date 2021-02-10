@@ -1,10 +1,15 @@
-FROM python:3
+FROM nginx:1.19.6
 
 
 RUN mkdir personalWebsite
 COPY  /web /personalWebsite
+COPY ./server.py /personalWebsite/web/
 
-WORKDIR /personalWebsite
+COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./web/*.html /usr/share/nginx/html
+COPY ./web/*.png /usr/share/nginx/html
+COPY ./web/*.json /usr/share/nginx/html
+COPY ./web/*.js /usr/share/nginx/html
+COPY ./web/assets /usr/share/nginx/html
+COPY ./web/icons /usr/share/nginx/html
 
-EXPOSE 8080:8080
-ENTRYPOINT python3 server.py
