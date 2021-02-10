@@ -14,3 +14,5 @@ COPY ./web/assets /usr/share/nginx/html/
 COPY ./web/icons /usr/share/nginx/html/
 
 COPY ./nginx.conf /etc/nginx/
+RUN apt install python-certbot-nginx
+RUN certbot --nginx -d thecalmday.com -d www.your_domain
