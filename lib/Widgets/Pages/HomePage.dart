@@ -6,6 +6,7 @@ import 'package:personal_website/Styles/TextStyles.dart';
 import 'package:personal_website/Utilities/GenerateMargin.dart';
 import 'package:personal_website/Widgets/Card/CardSquare.dart';
 import 'package:personal_website/Widgets/Footer/Footer.dart';
+import 'package:personal_website/Widgets/Header/DesktopHeader.dart';
 import 'package:personal_website/Widgets/Header/Header.dart';
 import 'package:personal_website/Widgets/PageTemplate/PageTemplate.dart';
 import 'package:personal_website/Widgets/Section/Section.dart';

@@ -9,6 +9,7 @@ class PageTemplate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+
         child: ListView(
             addAutomaticKeepAlives: true, children: [...this.children]),
       ),

@@ -27,6 +27,7 @@ class MobileSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: gallery,
       ),
     );

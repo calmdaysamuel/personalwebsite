@@ -1,61 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
-import 'package:personal_website/Styles/Colors.dart';
-import 'package:personal_website/Styles/TextStyles.dart';
-import 'package:personal_website/Utilities/WebsiteRoute.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:personal_website/Widgets/Header/DesktopHeader.dart';
+import 'package:personal_website/Widgets/Header/MobileHeader.dart';
+import 'package:personal_website/Widgets/Header/MobileHeader.dart';
+import 'package:responsive_builder/responsive_builder.dart';
+
 
 class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: ColorStyle.primaryBlack,
-      padding: EdgeInsets.all(15),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          InkWell(
-            onTap: () {
-              WebsiteRoute.navigateToStaticPage("home", context);
-            },
-            child: Text(
-              "SAMUEL CALMDAY",
-              style: TextStyles.headerTitle,
-            ),
-          ),
-          SizedBox(
-            height: 35,
-          ),
-          Row(
-            children: [
-              IconButton(
-                  icon: Icon(
-                    Ionicons.mail_outline,
-                    color: ColorStyle.primaryWhite,
-                  ),
-                  onPressed: () {
-                    launch("mailto:sam@thecalmday.com");
-                  }),
-              IconButton(
-                  icon: Icon(
-                    Ionicons.logo_linkedin,
-                    color: ColorStyle.primaryWhite,
-                  ),
-                  onPressed: () {
-                    launch("https://www.linkedin.com/in/samcalmday/");
-                  }),
-              IconButton(
-                  icon: Icon(
-                    Ionicons.logo_github,
-                    color: ColorStyle.primaryWhite,
-                  ),
-                  onPressed: () {
-                    launch("https://github.com/calmdaysamuel/");
-                  }),
-            ],
-          )
-        ],
-      ),
+    return ScreenTypeLayout.builder(
+      mobile: (BuildContext context) => MobileHeader(),
+      tablet: (BuildContext context) => DesktopHeader(),
+      desktop: (BuildContext context) => DesktopHeader(),
     );
   }
 }

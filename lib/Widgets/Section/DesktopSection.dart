@@ -24,9 +24,11 @@ class DesktopSection extends StatelessWidget {
       count += 1;
 
       if (count == this.maxSize) {
-        section.add(Row(
-          mainAxisAlignment: alignment,
-          children: tempList,
+        section.add(IntrinsicHeight(
+          child: Row(
+            mainAxisAlignment: alignment,
+            children: tempList,
+          ),
         ));
         section.add(SizedBox(
           height: 35,
@@ -48,7 +50,7 @@ class DesktopSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: section,
       ),

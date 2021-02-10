@@ -40,16 +40,17 @@ class CardSquare extends StatelessWidget {
             this.title,
             style: TextStyles.cardHeading,
           ),
-          Row(
+          Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               (this.role != null)
                   ? Text(this.role)
                   : SizedBox(
-                      height: 20,
+                      height: 5,
                     ),
               SizedBox(
-                height: 20,
+                height: 5,
               ),
               (this.date != null)
                   ? Text(this.date)

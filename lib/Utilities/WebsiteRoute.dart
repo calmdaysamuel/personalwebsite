@@ -21,10 +21,6 @@ class WebsiteRoute {
   }
 
   static void navigateToProject(String page, BuildContext context) {
-    if (["chernobyl++", "personal-website"].contains(page)) {
-      WebsiteRoute.navigateToStaticPage("project-gallery", context);
-      return;
-    }
     if (["home", "project-gallery", "experience-gallery"].contains(page)) {
       WebsiteRoute.navigateToStaticPage(page, context);
       return;
