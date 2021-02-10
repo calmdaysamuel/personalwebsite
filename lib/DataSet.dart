@@ -9,60 +9,19 @@ class DataSet {
     //Key Projects
     "personal-website": ProjectModel(
         cardModel: CardModel(
-            goTo: "personal-website",
+
             date: "February 2020",
             title: "Personal Website",
             body:
                 "Chernobyl++ is a C++ library that provide an easy to use and high performant interface to test quantitive trading algorithms on current or historic stock market data."),
-        articleModel: ArticleModel(content: [
-          Category(type: "heading", content: "DESIGN PHILOSOPHY"),
-          Category(
-              type: "paragraph",
-              content:
-                  "WebSocket++'s goal is to provide a flexible set of tools for building a wide variety of WebSocket based applications wrapped by low or zero overhead abstractions. It is not opinionated. If something can be practically replacable (with low overhead) based on the user's preference then it is. It accomplishes this via a policy based design built using C++ template metaprogramming. Bundled config packages provide sane defaults so most users can get started quickly. As they understand their solution better and want to optimize, the default components can be reconfigured or replaced entirely and transparently."),
-          Category(
-              type: "paragraph",
-              content:
-                  "WebSocket++'s goal is to provide a flexible set of tools for building a wide variety of WebSocket based applications wrapped by low or zero overhead abstractions. It is not opinionated. If something can be practically replacable (with low overhead) based on the user's preference then it is. It accomplishes this via a policy based design built using C++ template metaprogramming. Bundled config packages provide sane defaults so most users can get started quickly. As they understand their solution better and want to optimize, the default components can be reconfigured or replaced entirely and transparently."),
-          Category(type: "heading", content: "USE CASES"),
-          Category(
-              type: "paragraph",
-              content:
-                  "WebSocket++'s goal is to provide a flexible set of tools for building a wide variety of WebSocket based applications wrapped by low or zero overhead abstractions. It is not opinionated. If something can be practically replacable (with low overhead) based on the user's preference then it is. It accomplishes this via a policy based design built using C++ template metaprogramming. Bundled config packages provide sane defaults so most users can get started quickly. As they understand their solution better and want to optimize, the default components can be reconfigured or replaced entirely and transparently."),
-          Category(type: "heading", content: "KEY FEATURES"),
-          Category(
-              type: "paragraph",
-              content:
-                  "WebSocket++'s goal is to provide a flexible set of tools for building a wide variety of WebSocket based applications wrapped by low or zero overhead abstractions. It is not opinionated. If something can be practically replacable (with low overhead) based on the user's preference then it is. It accomplishes this via a policy based design built using C++ template metaprogramming. Bundled config packages provide sane defaults so most users can get started quickly. As they understand their solution better and want to optimize, the default components can be reconfigured or replaced entirely and transparently."),
-        ])),
+        ),
     "chernobyl++": ProjectModel(
         cardModel: CardModel(
-            goTo: "chernobyl++",
             date: "February 2020",
             title: "Chernobyl Engine",
             body:
-                "Chernobyl Engine is a C++ library that provide an easy to use and high performant interface to test quantitive trading algorithms on current or historic stock market data."),
-        articleModel: ArticleModel(content: [
-          Category(type: "heading", content: "DESIGN PHILOSOPHY"),
-          Category(
-              type: "paragraph",
-              content:
-                  "WebSocket++'s goal is to provide a flexible set of tools for building a wide variety of WebSocket based applications wrapped by low or zero overhead abstractions. It is not opinionated. If something can be practically replacable (with low overhead) based on the user's preference then it is. It accomplishes this via a policy based design built using C++ template metaprogramming. Bundled config packages provide sane defaults so most users can get started quickly. As they understand their solution better and want to optimize, the default components can be reconfigured or replaced entirely and transparently."),
-          Category(
-              type: "paragraph",
-              content:
-                  "WebSocket++'s goal is to provide a flexible set of tools for building a wide variety of WebSocket based applications wrapped by low or zero overhead abstractions. It is not opinionated. If something can be practically replacable (with low overhead) based on the user's preference then it is. It accomplishes this via a policy based design built using C++ template metaprogramming. Bundled config packages provide sane defaults so most users can get started quickly. As they understand their solution better and want to optimize, the default components can be reconfigured or replaced entirely and transparently."),
-          Category(type: "heading", content: "USE CASES"),
-          Category(
-              type: "paragraph",
-              content:
-                  "WebSocket++'s goal is to provide a flexible set of tools for building a wide variety of WebSocket based applications wrapped by low or zero overhead abstractions. It is not opinionated. If something can be practically replacable (with low overhead) based on the user's preference then it is. It accomplishes this via a policy based design built using C++ template metaprogramming. Bundled config packages provide sane defaults so most users can get started quickly. As they understand their solution better and want to optimize, the default components can be reconfigured or replaced entirely and transparently."),
-          Category(type: "heading", content: "KEY FEATURES"),
-          Category(
-              type: "paragraph",
-              content:
-                  "WebSocket++'s goal is to provide a flexible set of tools for building a wide variety of WebSocket based applications wrapped by low or zero overhead abstractions. It is not opinionated. If something can be practically replacable (with low overhead) based on the user's preference then it is. It accomplishes this via a policy based design built using C++ template metaprogramming. Bundled config packages provide sane defaults so most users can get started quickly. As they understand their solution better and want to optimize, the default components can be reconfigured or replaced entirely and transparently."),
-        ])),
+                "Chernobyl Engine is a C++ header library designed for quantitative analysis of stock market data. Chernobyl++ allows for easy implementation and testing of quantitative algorithms on real time or historic stock market data."),
+        ),
 
     //Internships
     "autodesk": ProjectModel(
@@ -243,9 +202,5 @@ class DataSet {
   static List<String> awards = ["capstone-scholarship", "autodesk-scholarship"];
   static List<String> skills = ["programming-languages", "frameworks"];
   static List<String> internships = ["intuit", "autodesk"];
-  static List<String> activities = [
-    "google-coding-challenge",
-    "at&t-hackathon",
-    "organizations"
-  ];
+  static List<String> activities = ["google-coding-challenge", "at&t-hackathon", "organizations"];
 }
