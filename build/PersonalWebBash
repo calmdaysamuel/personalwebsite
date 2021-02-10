@@ -3,7 +3,7 @@
 #docker installation
 
 apt-get update
-apt-get upgrade
+
 
 apt-get install \
     apt-transport-https \
@@ -21,19 +21,22 @@ add-apt-repository \
    stable"
 apt-get install docker-ce docker-ce-cli containerd.io
 
-#complete docker installation
 
-#directory setup
 mkdir personalWebsite
+mkdir personal_website
+cd personal_website
+git clone https://github.com/calmdaysamuel/personalwebsite.git
+cd ..
 cd personalWebsite
 
-git clone https://github.com/calmdaysamuel/personalwebsite.git
+mv ../personal_website/personalwebsite/build/Dockerfile .
+mv ../personal_website/personalwebsite/build/server.py .
+mv ../personal_website/personalwebsite/build/web .
+rm -r ../personal_website
 
-mv personal_website/build/Dockerfile .
-mv personal_website/build/server.py .
-mv personal_website/build/web .
-rm personal_website
-cd web
 
-#build container run container
+
 docker build -t scalm/personal-website .
+
+echo "completed"
+echo " "

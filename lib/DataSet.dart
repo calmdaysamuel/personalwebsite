@@ -39,9 +39,9 @@ class DataSet {
         cardModel: CardModel(
             goTo: "chernobyl++",
             date: "February 2020",
-            title: "Chernobyl++",
+            title: "Chernobyl Engine",
             body:
-                "Chernobyl++ is a C++ library that provide an easy to use and high performant interface to test quantitive trading algorithms on current or historic stock market data."),
+                "Chernobyl Engine is a C++ library that provide an easy to use and high performant interface to test quantitive trading algorithms on current or historic stock market data."),
         articleModel: ArticleModel(content: [
           Category(type: "heading", content: "DESIGN PHILOSOPHY"),
           Category(
