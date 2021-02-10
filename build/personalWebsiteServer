@@ -1,0 +1,8 @@
+http {
+    server {
+            root /personalWebsite/build/web;
+           location / {
+                   root /personalWebsite/build/web;
+           }
+    }
+}
